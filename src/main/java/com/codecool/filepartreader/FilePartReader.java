@@ -1,3 +1,4 @@
+package com.codecool.filepartreader;
 
 import java.io.IOException;
 import java.nio.file.Files;

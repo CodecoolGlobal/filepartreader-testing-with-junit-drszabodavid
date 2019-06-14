@@ -1,3 +1,5 @@
+package com.codecool.filepartreader;
+
 import java.io.IOException;
 
 public class Main {
