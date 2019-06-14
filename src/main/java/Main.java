@@ -5,7 +5,7 @@ public class Main {
 
         FilePartReader filePartReader = new FilePartReader();
         FileWordAnalyzer fileWordAnalyzer = new FileWordAnalyzer(filePartReader);
-        filePartReader.setup("src/text.txt",1 , 22);
+        filePartReader.setup("src/main/resources/text.txt",1 , 22);
         System.out.println(fileWordAnalyzer.getWordsOrderedAlphabetically());
         System.out.println(fileWordAnalyzer.getWordsContainingSubstring("met"));
         System.out.println(fileWordAnalyzer.getStringsWhichPalindromes());

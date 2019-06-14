@@ -2,7 +2,6 @@
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Scanner;
 
 public class FilePartReader {
 
@@ -20,7 +19,7 @@ public class FilePartReader {
         this.toLine = toLine;
     }
 
-    String read() throws IOException {
+    private String read() throws IOException {
         String fullText = "";
         for (int i = 0; i < Files.readAllLines(Paths.get(filePath)).size(); i++) {
             String lineToReturn = Files.readAllLines(Paths.get(filePath)).get(i);
@@ -38,7 +37,6 @@ public class FilePartReader {
         }
         return toReturn;
         }
-
 }
 
 
