@@ -14,13 +14,13 @@ public class FileWordAnalyzer {
     }
 
 
-    private ArrayList<String> getCleanList() throws IOException {
+    public ArrayList<String> getCleanList() throws IOException {
         String toUse = filePartReader.readLines();
         ArrayList<String> wordArrayList = new ArrayList<>();
         ArrayList<String> cleanWordList = new ArrayList<>();
         Collections.addAll(wordArrayList, toUse.trim().split("\\s+"));
         for (String word : wordArrayList) {
-            word = word.replaceAll("[^a-zA-Z0-9!@.,]", "");
+            word = word.replaceAll("[^a-zA-Z0-9]", "");
             cleanWordList.add(word);
         }
         return cleanWordList;

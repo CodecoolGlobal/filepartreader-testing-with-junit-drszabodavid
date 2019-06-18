@@ -20,10 +20,13 @@ public class FilePartReader {
         this.toLine = toLine;
     }
 
-    private String read() throws IOException {
+    public String read() throws IOException {
         String fullText = "";
         for (int i = 0; i < Files.readAllLines(Paths.get(filePath)).size(); i++) {
             String lineToReturn = Files.readAllLines(Paths.get(filePath)).get(i);
+            if (i == Files.readAllLines(Paths.get(filePath)).size()-1){
+                return fullText += lineToReturn;
+            }
             fullText += lineToReturn + "\n";
         }
         return fullText;
@@ -34,6 +37,9 @@ public class FilePartReader {
         String toReturn = "";
         String[] lines = fullText.split("\n");
         for (int i = fromLine; i < toLine; i++) {
+            if (i == toLine-1){
+                return toReturn += lines[i];
+            }
             toReturn += lines[i] + ("\n");
         }
         return toReturn;
